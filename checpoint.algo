@@ -1,0 +1,19 @@
+ALGORITHM checkpointalgo
+VAR
+    s:STRING
+    v:INTEGER
+    nb:INTEGER
+    i:INTEGER
+BEGIN
+    nb=1
+    FOR i FROM 0 TO length(s)-2 STEP i:=i+1  DO
+        IF (s[i]=" ") THEN
+            nb=nb+1
+        ELSE_IF (s[i]="a" or "y" or "e" or "u" or "i" or "o") THEN
+            v:=v+1
+        END_IF
+    END_FOR
+    writeln ("the number of words is",nb)
+    writeln ("the number of vowels is",v)
+    writeln ("the length of sentence is",length(s)-nb)
+END
